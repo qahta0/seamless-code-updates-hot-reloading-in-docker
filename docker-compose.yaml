@@ -1,0 +1,31 @@
+version: "3.9"
+name: seamless-code-updates-hot-reloading-in-docker
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 5000:5000
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /node_modules
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=abdullah
+      - MONGO_INITDB_ROOT_PASSWORD=abdullah
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

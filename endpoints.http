@@ -1,0 +1,51 @@
+###
+### GET All Todos
+###
+
+GET http://localhost:5000/todos
+
+###
+
+###
+### Create Todo
+###
+
+POST http://localhost:5000/todos
+Content-Type: application/json
+
+{
+  "title": "This a new todo 🚀",
+  "completed": true
+}
+
+###
+
+###
+### Get Todo By ID
+###
+
+GET http://localhost:5000/todos/647b9f86413bb3518d3e1ca6
+
+###
+
+###
+### Update Todo By ID
+###
+
+PUT http://localhost:5000/todos/647b9f86413bb3518d3e1ca6
+Content-Type: application/json
+
+{
+  "title": "This a new todo (updated) 🚀",
+  "completed": true
+}
+
+###
+
+###
+### Delete Todo By ID
+###
+
+DELETE http://localhost:5000/todos/647b9f86413bb3518d3e1ca6
+
+###
